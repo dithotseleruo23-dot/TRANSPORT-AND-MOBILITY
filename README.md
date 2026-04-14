@@ -10,14 +10,14 @@ Project features:
 
 - Enter current location
 - Enter destination
-- Prompts available routes
+- Shows available routes
 - Shows how many trips are needed
 - Basic route guidance
 - Calculates fairs
 
-Systems used:
+Technologies used:
 
-1.Java
+1.Java Programming Language 
 
 2.Object-Oriented Programming (OOP)
 
