@@ -15,6 +15,7 @@ Project features:
 
 Systems used:
 1.Java
+
 2.Object-Oriented Programming (OOP)
 Concepts Implemented:
 - Classes and Objects
@@ -26,9 +27,13 @@ Concepts Implemented:
   
 How to Run:
 Compile the program: javac Main.java
+
 Run the program: java Main
 
 Package Structure:
+
 app → main application(Main app) and user interaction and menu
+
 transport → classes like Location, Route, Combi, Trips 
+
 services → Logic like calculating fairs, avaliable routes, how many trips required
