@@ -38,12 +38,12 @@ Run the program: java Main
 
 Package Structure:
 
-app → main application
+app- main application
 
 UI- (user interface) and menu
 
 travel- classes like Location, Route, Trip
 
-transport → classes like Transport and Combi
+transport- classes like Transport and Combi
 
-services → Logic like calculating fairs, avaliable routes, how many trips required
+services- Logic like calculating fairs, avaliable routes, how many trips required
