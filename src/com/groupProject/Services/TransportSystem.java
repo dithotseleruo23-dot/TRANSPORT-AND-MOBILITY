@@ -5,7 +5,7 @@ import com.groupProject.Travel.Route;
 
 import java.util.ArrayList;
 
-public class System {
+public class TransportSystem {
     private List<Route> routes = new ArrayList<>();
 
     public void addRoute(Route route){
