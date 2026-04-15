@@ -25,7 +25,6 @@ Concepts Implemented:
 
 - Classes and Objects
 - Inheritance
-- Polymorphism
 - Encapsulation
 - Abstraction
 - Collections (ArrayList)
