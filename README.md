@@ -38,8 +38,19 @@ Run the program: java Main
 
 Package Structure:
 
-app → main application(Main app) and user interaction and menu
+app → main application(Main app) and user interaction(Menu)
 
-transport → classes like Location, Route, Combi, Trips 
+transport → classes like Location, Route, Combi, Trip, Transport 
 
 services → Logic like calculating fairs, avaliable routes, how many trips required
+
+# Progress 
+
+# (Milestone 1)
+- Repository created
+- Written Concept note
+
+# (Milestone 2)
+- Package Structure created
+- Core classes have been added
+- Menu loop Implemented 
