@@ -1,4 +1,4 @@
-package com.groupProject.Transportation;
+package com.groupProject.Travel;
 
 public class Location {
     private String place;

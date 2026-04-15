@@ -1,4 +1,6 @@
-package com.groupProject.Transportation;
+package com.groupProject.Travel;
+
+import com.groupProject.Transportation.TransportMedium;
 
 public class Route {
     private Location start;
