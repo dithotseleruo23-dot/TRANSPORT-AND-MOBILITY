@@ -15,6 +15,7 @@ public class Menu {
 
             System.out.println("Choose an option");
             int choice = scanner.nextInt();
+            scanner.nextLine();
 
             if(choice == 1){
                 System.out.println("Enter starting location: ");
@@ -35,6 +36,7 @@ public class Menu {
 
             }else if(choice == 3){
                 System.out.println("EXITING SYSTEM...");
+                break;
             }else{
                 System.out.println("INVALID OPTION!!");
             }
