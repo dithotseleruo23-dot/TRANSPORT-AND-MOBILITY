@@ -7,6 +7,10 @@ public class Menu {
 
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Taxi Price: P10");
+        System.out.println("Special Taxi Price(LONG DISTANCES): P50");
+        System.out.println("Combi Price: P9");
+
         while(true){
             System.out.println("=== COMBI ROUTE SYSTEM ===");
             System.out.println("1. Find route");
@@ -23,7 +27,7 @@ public class Menu {
                 System.out.println("Enter Destination: ");
                 String end =  scanner.nextLine();
                 System.out.println("Finding ROUTE...");
-                System.out.println("11knfjbjbjhbjbj");
+
                 /*FINDING ROUTE CODE */
 
 

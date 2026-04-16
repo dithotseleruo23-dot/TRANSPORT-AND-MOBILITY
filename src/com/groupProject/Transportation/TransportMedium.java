@@ -6,7 +6,5 @@ public abstract class TransportMedium {
     public TransportMedium(String name){
         this.name = name;
     }
-
-    public abstract void move();
     
 }
