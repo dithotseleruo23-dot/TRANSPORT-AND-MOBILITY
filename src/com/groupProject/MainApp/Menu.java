@@ -13,7 +13,7 @@ public class Menu {
             System.out.println("2. View routes");
             System.out.println("3. Exit");
 
-            System.out.println("Choose an option");
+            System.out.println("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -23,6 +23,7 @@ public class Menu {
                 System.out.println("Enter Destination: ");
                 String end =  scanner.nextLine();
                 System.out.println("Finding ROUTE...");
+                System.out.println("11knfjbjbjhbjbj");
                 /*FINDING ROUTE CODE */
 
 
