@@ -12,7 +12,9 @@ Project features:
 - Enter destination
 - Shows available routes
 - Shows how many trips are needed
+- Indicates if trips are mixed (requires both taxi & combi to arrive at destination).
 - Basic route guidance
+- Simplifies and shows shortest routes needed to arrive at destination.
 - Calculates fairs
 
 Technologies used:
