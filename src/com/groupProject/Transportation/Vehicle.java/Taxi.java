@@ -4,7 +4,7 @@ public class Taxi extends Vehicle {
     private boolean isSpecial;
 
     public Taxi(String routeName, boolean isSpecial) {
-        // Special trips are usually P30-P40, shared is P10
+        //Special trips are usually P30-P40, shared is P10
         super(routeName, isSpecial ? 30.00 : 10.00);
         this.isSpecial = isSpecial;
     }
