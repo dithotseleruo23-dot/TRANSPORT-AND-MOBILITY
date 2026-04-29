@@ -5,13 +5,16 @@ import com.groupProject.Services.CombiFare;
 import com.groupProject.Services.TaxiFare;
 
 public class Menu {
+    private double COMBI_RATE = 9.0;
+    private double TAXI_BASE_RATE = 10.0;
+    private double TAXI_SPECIAL_RATE = 40.0;
 
     public static void main(String[] args){
 
         Scanner scanner = new Scanner(System.in);
 
         /**System.out.println("Taxi Price: P10");
-        System.out.println("Special Taxi Price(LONG DISTANCES): P50");
+        System.out.println("Special Taxi Price(LONG DISTANCES): P40");
         System.out.println("Combi Price: P9");**/
 
 
