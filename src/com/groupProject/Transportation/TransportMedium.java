@@ -18,9 +18,6 @@ public abstract class TransportMedium {
         this.routeName = routeName;
     }
 
-    // Abstract method - each vehicle calculates fare differently
-    public abstract double calculateFare(double distance);
-    
     public void completeTrip() {
         tripsCompleted++;
         isAvailable = true;
