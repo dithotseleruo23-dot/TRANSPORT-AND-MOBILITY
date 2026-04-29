@@ -51,6 +51,8 @@ transport- classes like Transport and Combi
 services- Logic like calculating fairs, avaliable routes, how many trips required
 
 REQUIREMENTS FOR PASSENGERS
+
+
 • If a customer wants to take a trip alone, they can only use a TAXI SPECIAL SERVICE
 • Customers go to wait at common bus/combi/taxi stops to access combi/taxi services
 
