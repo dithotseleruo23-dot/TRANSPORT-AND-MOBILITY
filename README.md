@@ -1,5 +1,18 @@
 # TRANSPORT-AND-MOBILITY- CSI142
 
+# GROUP MEMBERS
+
+1. Zandile Thamage 202501399
+
+2. Leruo Dithotse 202503473
+
+3. Phineas Mokalane 202504984
+
+4. Elsie Maswere 202503713
+
+5. Barati Moapare 202505148
+
+
 # Taxi/Combi Route Assistant System.
 
 Description:
