@@ -1,62 +1,102 @@
-# TRANSPORT-AND-MOBILITY
-CSI142
-Taxi route assistant system.
+# Taxi/Combi Route Assistant System
+**CSI142 Object Oriented Programming — Semester II 2025/26**
+University of Botswana, Department of Computer Science
 
-Description:
+---
 
-This project is a Java console application that helps users find their way using combis in Botswana. The user enters where they are and where they want to go, and the system suggests which routes they can take and how many trips it will take to get there. In Botswana, combis follow specific routes, but it’s not always clear which one to take, especially if you are going somewhere new. Sometimes you also need to change combis along the way. This system is meant to make that easier by giving simple directions based on the user’s input.
+## Group Members
 
-Project features:
+| # | Name | Student ID |
+|---|------|------------|
+| 1 | Zandile Thamage | 202501399 |
+| 2 | Leruo Dithotse | 202503473 |
+| 3 | Phineas Mokalane | 202504984 |
+| 4 | Elsie Maswere | 202503713 |
+| 5 | Barati Moapare | 202505148 |
 
-- Enter current location
-- Enter destination
-- Shows available routes
-- Shows how many trips are needed
-- Indicates if trips are mixed (requires both taxi & combi to arrive at destination).
-- Basic route guidance
-- Simplifies and shows shortest routes needed to arrive at destination.
-- Calculates fairs
+---
 
-Technologies used:
+## What This Project Does
 
-1.Java Programming Language 
+If you have ever tried to get somewhere in Gaborone by combi and had no idea which one to take, this is for you. Routes are not posted anywhere. If you are going somewhere new you ask someone, guess, or end up on the wrong combi. And if your destination needs two combis, figuring out the fare gets even more confusing.
 
-2.Object-Oriented Programming (OOP)
+We built this to make that easier. You type where you are and where you want to go, pick combi or taxi, and the app works out the route and what it should cost. If you need more than one vehicle to get there, it tells you that too.
 
-Concepts Implemented:
+---
+
+## How to Compile and Run
+
+Make sure Java is installed. Open a terminal in the project folder and run:
+
+```
+javac -d out src/com/groupProject/Services/*.java src/com/groupProject/Transportation/*.java src/com/groupProject/Travel/*.java src/com/groupProject/MainApp/*.java
+```
+
+Then start the program with:
+
+```
+java -cp out com.groupProject.MainApp.Menu
+```
+
+When the app starts it already has some routes loaded so you can test things straight away without setting anything up first.
+
+---
+
+## Features
+
+- Enter your current location and destination
+- Choose combi or taxi
+- Get the route between your two locations
+- See the estimated fare based on distance
+- Tells you if the trip needs more than one vehicle
+- Handles bad input without crashing
+
+---
+
+## How Fares Work
+
+**Combi:** P9 flat fare per trip, no matter the distance
+
+**Taxi:** P10 for short trips (under 6 km), P40 for anything longer
+
+---
+
+## Package Structure
+
+| Package | What is in it |
+|---------|---------------|
+| `com.groupProject.MainApp` | Menu.java — starts the app and handles all user interaction |
+| `com.groupProject.Transportation` | TransportMedium (abstract class), Combi, Taxi |
+| `com.groupProject.Services` | fareCalculator (interface), TransportSystem, RouteFinder, CombiFare, TaxiFare |
+| `com.groupProject.Travel` | Location, Route |
+
+---
+
+## OOP Concepts Used
 
 - Classes and Objects
 - Inheritance
-- Polymorphism
 - Encapsulation
-- Abstraction --> Interfaces
+- Abstraction — interface and abstract class
+- Polymorphism
 - Collections (ArrayList)
-  
-How to Run:
+- Constructor overloading and chaining
 
-Compile the program: javac Main.java
+---
 
-Run the program: java Main
+## Progress
 
-Package Structure:
+**Milestone 1**
+- Repository created
+- Concept note written
 
-app- main application
+**Milestone 2**
+- Package structure set up
+- Core classes added
+- Menu loop working
 
-UI- (user interface) and menu
-
-travel- classes like Location, Route, Trip
-
-transport- classes like Transport and Combi
-
-services- Logic like calculating fairs, avaliable routes, how many trips required
-
-
-# NOTE FOR PASSENGERS
-
-• If a customer wants to take a trip alone, they can only use a TAXI SPECIAL SERVICE which is P40
-
-• Customers go to wait at common bus/combi/taxi stops to access combi/taxi services
-
-• Trips to surrounding places outside Gaborone such as Metsimotlhabe, Tlokweng, Mmopane may require a higher fair
-
-
+**Milestone 3**
+- Abstract class and inheritance implemented
+- fareCalculator interface added
+- Fare calculation logic completed
+- Input validation added
