@@ -9,7 +9,10 @@
 | April 30 | Leruo | OOP Mapping File | - | Pending |
 
  ## Commit Summary (as of April 29)
+
 Barati Steward: 189 additions, 47 deletions
+
 Phineas: 72 additions, 0 deletions
+
 Elsie Maswere: 53 additions, 9 deletions
 
