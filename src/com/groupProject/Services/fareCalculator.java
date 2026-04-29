@@ -1,5 +1,5 @@
 package com.groupProject.Services;
 
-public interface fareCalculator {
+public interface fareCalculator extends TransportMedium {
     double calculateFare(double distance);
 }
