@@ -49,3 +49,14 @@ travel- classes like Location, Route, Trip
 transport- classes like Transport and Combi
 
 services- Logic like calculating fairs, avaliable routes, how many trips required
+
+
+# NOTE FOR PASSENGERS
+
+• If a customer wants to take a trip alone, they can only use a TAXI SPECIAL SERVICE which is P40
+
+• Customers go to wait at common bus/combi/taxi stops to access combi/taxi services
+
+• Trips to surrounding places outside Gaborone such as Metsimotlhabe, Tlokweng, Mmopane may require a higher fair
+
+
