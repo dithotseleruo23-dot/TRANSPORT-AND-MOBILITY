@@ -1,1 +1,46 @@
+<<interface>>
+         fareCalculator
+  +---------------------------+
+  | + calculateFare(d):double |
+  +---------------------------+
+              ^
+              | implements
+              |
+       <<abstract>>
+       TransportMedium
+  +-------------------------------------+
+  | - name: String                      |
+  | - routeName: String                 |
+  | - baseFare: double                  |
+  | - isAvailable: boolean              |
+  | - tripsCompleted: int               |
+  |-------------------------------------|
+  | + TransportMedium(name)             |
+  | + TransportMedium(name, routeName)  |
+  | + calculateFare(d): double <<abs>>  |
+  | + completeTrip()                    |
+  | + displayInfo()                     |
+  | + getters / setters                 |
+  +-------------------------------------+
+         ^               ^
+      extends         extends
+         |               |
+       Combi            Taxi
+  +-----------+   +------------------+
+  | FARE=9.00 |   | SHORT=10, LONG=40 |
+  |-----------|   |------------------|
+  |calculateF()|  | - isSpecial      |
+  |displayInfo()|  |calculateFare()   |
+  +-----------+   |displayInfo()     |
+                  +------------------+
 
+  Location          Route
+  +-------------+   +------------------------------+
+  | - place     |<--| - start: Location            |
+  |-------------|   | - destination: Location      |
+  | + getPlace()|   | - vehicle: TransportMedium   |
+  | + setPlace()|   | - stops: ArrayList<Location> |
+  +-------------+   |------------------------------|
+                    | + addStop(Location)          |
+                    | + isDirectRoute(): boolean   |
+                    +------------------------------+
