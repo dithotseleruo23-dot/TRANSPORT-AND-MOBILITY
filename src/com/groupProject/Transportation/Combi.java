@@ -1,6 +1,6 @@
 package com.groupProject.Transportation;
 
-public class Combi extends TransportMedium {
+public class Combi extends TransportMedium implements fareCalculator {
 
 
     public Combi(String name){

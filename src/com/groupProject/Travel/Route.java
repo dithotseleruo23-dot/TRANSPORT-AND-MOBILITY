@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Route {
     private Location start;
-    private ArrayList<Location> stops;
+    private List<Location> stops;
     private String routeName;
     private Location destination;
     private TransportMedium vehicle;
@@ -22,7 +22,7 @@ public class Route {
         return start;
     }
 
-    public String routeName(){
+    public String getRouteName(){
         return routeName;
     }
 
@@ -34,7 +34,7 @@ public class Route {
         stops.add(location);
     }
 
-    /**public boolean directRoute(){
-        return ...;
-    }**/
+    public boolean isDirectRoute(){
+        return stops.isEmpty();
+    }
 }
