@@ -1,6 +1,6 @@
 package com.groupProject.Services;
 
-public class CombiFare implements farecalculator {
+public class CombiFare implements fareCalculator {
     private double combiPrice;
 
     public CombiFare(double combiPrice){
