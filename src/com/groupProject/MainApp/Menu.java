@@ -156,7 +156,7 @@ public class Menu {
     }
 
     static void loadSeedData() {
-        // Combis
+        
         Combi c1 = new Combi("Combi-01", "Station - Main Mall");
         Combi c2 = new Combi("Combi-02", "Main Mall - Broadhurst");
         Combi c3 = new Combi("Combi-03", "Gaborone - Mogoditshane");
