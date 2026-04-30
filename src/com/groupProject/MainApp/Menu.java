@@ -4,11 +4,14 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import com.groupProject.Services.TransportSystem;
+import com.groupProject.Services.RouteFinder;
 import com.groupProject.Transportation.TransportMedium;
 import com.groupProject.Transportation.Combi;
 import com.groupProject.Transportation.Taxi;
 import com.groupProject.Travel.Location;
 import com.groupProject.Travel.Route;
+import com.groupProject.Exceptions.InvalidLocationException;
+import com.groupProject.Exceptions.RouteNotFoundException;
 
 public class Menu {
 
@@ -35,9 +38,7 @@ public class Menu {
             System.out.println("5. Exit");
             System.out.println("==============================");
 
-            System.out.println("Choose an option: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+            int choice = getIntInput("Choose an option: ");
 
             if (choice == 1) {
                 findRoute();
@@ -55,64 +56,74 @@ public class Menu {
             }
         }
 
-        
+        scanner.close();
     }
 
-    
     static void findRoute() {
         System.out.println();
         System.out.println("-- Find Route --");
-        System.out.print("Enter your current location: ");
-        String start = scanner.nextLine();
 
-        System.out.print("Enter your destination: ");
-        String end = scanner.nextLine();
+        try {
+            System.out.print("Enter your current location: ");
+            String start = scanner.nextLine().trim();
 
-        if (start.equals("") || end.equals("")) {
-            System.out.println("Error: Location and destination cannot be empty.");
-            return;
+            System.out.print("Enter your destination: ");
+            String end = scanner.nextLine().trim();
+
+            if (start.equals("")) {
+                throw new InvalidLocationException("Starting location cannot be empty.");
+            }
+            if (end.equals("")) {
+                throw new InvalidLocationException("Destination cannot be empty.");
+            }
+
+            
+            Route route = system.findRoute(start, end);
+
+            System.out.println();
+            System.out.println("Route found!");
+            System.out.println("Route    : " + route.getRouteName());
+            System.out.println("From     : " + route.getStart().getPlace());
+            System.out.println("To       : " + route.getDestination().getPlace());
+            System.out.println("Distance : " + route.getDistance() + " km");
+
+            System.out.println();
+            System.out.println("Choose your transport:");
+            System.out.println("1. Combi (P9 flat fare)");
+            System.out.println("2. Taxi  (P10 short / P40 long distance)");
+
+            int vehicleChoice = getIntInput("Your vehicle type choice: ");
+
+            double distance = route.getDistance();
+
+            TransportMedium selected;
+
+            if (vehicleChoice == 1) {
+                selected = new Combi("Combi", route.getRouteName());
+            } else if (vehicleChoice == 2) {
+                boolean isSpecial = distance > 6.0;
+                selected = new Taxi("Taxi", route.getRouteName(), isSpecial);
+            } else {
+                System.out.println("Invalid transport choice.");
+                return;
+            }
+
+            double fare = selected.calculateFare(distance);
+            System.out.println();
+            System.out.println("Fare     : P" + fare);
+
+            if (distance > 6.0 && vehicleChoice == 2) {
+                System.out.println("Note     : Long distance fare applied (over 6 km)");
+            }
+
+        } catch (InvalidLocationException e) {
+            System.out.println("Location error: " + e.getMessage());
+        } catch (RouteNotFoundException e) {
+            System.out.println("Sorry, " + e.getMessage());
+            System.out.println("Try option 2 to see all available routes.");
         }
-
-        
-        
-        System.out.println();
-        System.out.println("Choose your transport:");
-        System.out.println("1. Combi (P9 flat fare)");
-        System.out.println("2. Taxi  (P10 short / P40 long distance)");
-
-
-        System.out.println("Your Vehicle type choice: ");
-        int vehicleChoice = scanner.nextInt();
-        scanner.nextLine();
-
-        double distance = getDoubleInput("Enter estimated distance in km: ");
-
-        
-        TransportMedium selected;
-
-        if (vehicleChoice == 1) {
-            selected = new Combi("Combi", start + " to " + end);
-        } else if (vehicleChoice == 2) {
-            boolean isSpecial = distance > 6.0;
-            selected = new Taxi("Taxi", start + " to " + end, isSpecial);
-        } else {
-            System.out.println("Invalid transport choice.");
-            return;
-        }
-
-        double fare = selected.calculateFare(distance);
-        System.out.println();
-        System.out.println("Route    : " + start + " to " + end);
-        System.out.println("Distance : " + distance + " km");
-        System.out.println("Fare     : P" + fare);
-
-        if (distance > 6.0 && vehicleChoice == 2) {
-            System.out.println("Note     : Long distance fare applied (over 6 km)");
-        }
-
     }
 
-    
     static void viewAllRoutes() {
         System.out.println();
         System.out.println("-- Available Routes --");
@@ -129,6 +140,7 @@ public class Menu {
             System.out.println((i + 1) + ". " + r.getRouteName()
                     + " | From: " + r.getStart().getPlace()
                     + " | To: " + r.getDestination().getPlace()
+                    + " | Distance: " + r.getDistance() + "km"
                     + " | Vehicle: " + r.getVehicle().getName()
                     + " | Direct: " + (r.isDirectRoute() ? "Yes" : "No"));
         }
@@ -155,7 +167,6 @@ public class Menu {
     }
 
     static void loadSeedData() {
-        
         Combi c1 = new Combi("Combi-01", "Station - Main Mall");
         Combi c2 = new Combi("Combi-02", "Main Mall - Broadhurst");
         Combi c3 = new Combi("Combi-03", "Gaborone - Mogoditshane");
@@ -163,7 +174,6 @@ public class Menu {
         system.addTransport(c2);
         system.addTransport(c3);
 
-        
         Taxi t1 = new Taxi("Taxi-01", "Phakalane - Station", true);
         Taxi t2 = new Taxi("Taxi-02", "Gaborone CBD - Main Mall", false);
         system.addTransport(t1);
@@ -175,17 +185,16 @@ public class Menu {
         Location phakalane = new Location("Phakalane");
         Location mogoditshane = new Location("Mogoditshane");
 
-        Route r1 = new Route(station, "Station - Main Mall", c1, mainMall);
-        Route r2 = new Route(mainMall, "Main Mall - Broadhurst", c2, broadhurst);
-        Route r3 = new Route(phakalane, "Phakalane - Station", t1, station);
-        Route r4 = new Route(station, "Gaborone - Mogoditshane", c3, mogoditshane);
+        Route r1 = new Route(station, "Station - Main Mall", c1, mainMall, 3.5);
+        Route r2 = new Route(mainMall, "Main Mall - Broadhurst", c2, broadhurst, 4.2);
+        Route r3 = new Route(phakalane, "Phakalane - Station", t1, station, 12.0);
+        Route r4 = new Route(station, "Gaborone - Mogoditshane", c3, mogoditshane, 15.0);
         system.addRoute(r1);
         system.addRoute(r2);
         system.addRoute(r3);
         system.addRoute(r4);
     }
 
-   
     static int getIntInput(String prompt) {
         while (true) {
             try {
@@ -200,7 +209,6 @@ public class Menu {
         }
     }
 
-    
     static double getDoubleInput(String prompt) {
         while (true) {
             try {
