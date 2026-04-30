@@ -31,7 +31,6 @@ public class TransportSystem {
         return routes;
     }
 
-    // Returns only available transports
     public ArrayList<TransportMedium> getAvailableTransports() {
         ArrayList<TransportMedium> available = new ArrayList<TransportMedium>();
         for (int i = 0; i < transports.size(); i++) {
@@ -42,7 +41,6 @@ public class TransportSystem {
         return available;
     }
 
-    // Search transport by name
     public TransportMedium findTransportByName(String name) {
         for (int i = 0; i < transports.size(); i++) {
             if (transports.get(i).getName().equalsIgnoreCase(name)) {
@@ -52,7 +50,6 @@ public class TransportSystem {
         return null;
     }
 
-    // Search for a route by start and destination - throws RouteNotFoundException if not found
     public Route findRoute(String startPlace, String destinationPlace) throws RouteNotFoundException {
         for (int i = 0; i < routes.size(); i++) {
             Route r = routes.get(i);
@@ -62,11 +59,10 @@ public class TransportSystem {
                 return r;
             }
         }
-        // No matching route found
+        
         throw new RouteNotFoundException("No route found from " + startPlace + " to " + destinationPlace + ".");
     }
 
-    // Summary report - uses polymorphism to call calculateFare on each transport
     public void generateReport() {
         System.out.println();
         System.out.println("========== SYSTEM REPORT ==========");
@@ -80,7 +76,7 @@ public class TransportSystem {
         } else {
             for (int i = 0; i < transports.size(); i++) {
                 TransportMedium t = transports.get(i);
-                // Polymorphic call - calculateFare behaves differently for Combi vs Taxi
+                
                 System.out.println((i + 1) + ". " + t.getName()
                         + " | Route: " + t.getRouteName()
                         + " | Fare (5km): P" + t.calculateFare(5)
