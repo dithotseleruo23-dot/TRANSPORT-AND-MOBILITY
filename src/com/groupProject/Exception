@@ -1,1 +1,12 @@
+package com.groupProject.Exceptions;
 
+/**
+ * Thrown when an invalid fare value is set on a transport vehicle.
+ * For example, a negative fare amount.
+ */
+public class InvalidFareException extends Exception {
+
+    public InvalidFareException(String message) {
+        super(message);
+    }
+}
