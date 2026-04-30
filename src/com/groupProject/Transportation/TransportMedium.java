@@ -10,27 +10,22 @@ public abstract class TransportMedium implements fareCalculator {
     private double baseFare;
     private boolean isAvailable = true;
 
-    // Constructor 1 - name only
     public TransportMedium(String name) {
         this.name = name;
     }
 
-    // Constructor 2 - name and route (uses constructor chaining)
     public TransportMedium(String name, String routeName) {
         this(name);
         this.routeName = routeName;
     }
 
-    // Abstract method - subclasses must provide their own fare logic
     public abstract double calculateFare(double distance);
 
-    // Getters
     public String getName() { return name; }
     public String getRouteName() { return routeName; }
     public double getBaseFare() { return baseFare; }
     public boolean isAvailable() { return isAvailable; }
 
-    // Setters
     public void setAvailable(boolean available) {
         this.isAvailable = available;
     }
@@ -39,7 +34,6 @@ public abstract class TransportMedium implements fareCalculator {
         this.routeName = routeName;
     }
 
-    // Throws InvalidFareException if a negative fare is passed
     public void setBaseFare(double FARE) throws InvalidFareException {
         if (FARE < 0) {
             throw new InvalidFareException("Fare cannot be negative: " + FARE);
