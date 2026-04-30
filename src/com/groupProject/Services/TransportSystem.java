@@ -2,6 +2,7 @@ package com.groupProject.Services;
 
 import com.groupProject.Transportation.TransportMedium;
 import com.groupProject.Travel.Route;
+import com.groupProject.Exceptions.RouteNotFoundException;
 import java.util.ArrayList;
 
 public class TransportSystem {
@@ -51,14 +52,28 @@ public class TransportSystem {
         return null;
     }
 
+    // Search for a route by start and destination - throws RouteNotFoundException if not found
+    public Route findRoute(String startPlace, String destinationPlace) throws RouteNotFoundException {
+        for (int i = 0; i < routes.size(); i++) {
+            Route r = routes.get(i);
+            boolean startMatches = r.getStart().getPlace().equalsIgnoreCase(startPlace);
+            boolean destinationMatches = r.getDestination().getPlace().equalsIgnoreCase(destinationPlace);
+            if (startMatches && destinationMatches) {
+                return r;
+            }
+        }
+        // No matching route found
+        throw new RouteNotFoundException("No route found from " + startPlace + " to " + destinationPlace + ".");
+    }
+
     // Summary report - uses polymorphism to call calculateFare on each transport
     public void generateReport() {
         System.out.println();
         System.out.println("========== SYSTEM REPORT ==========");
         System.out.println("Total transports : " + transports.size());
         System.out.println("Total routes     : " + routes.size());
-
         System.out.println();
+
         System.out.println("-- Transport Details --");
         if (transports.size() == 0) {
             System.out.println("No transports registered.");
@@ -84,12 +99,11 @@ public class TransportSystem {
                 System.out.println((i + 1) + ". " + r.getRouteName()
                         + " | From: " + r.getStart().getPlace()
                         + " | To: " + r.getDestination().getPlace()
+                        + " | Distance: " + r.getDistance() + "km"
                         + " | Direct: " + (r.isDirectRoute() ? "Yes" : "No"));
             }
         }
         System.out.println("====================================");
         System.out.println();
     }
-
-    
 }
