@@ -1,48 +1,53 @@
 package com.groupProject.Transportation;
 
-public abstract class TransportMedium {
-    protected String name;
-    protected String routeName;
-    protected double baseFare;
-    protected boolean isAvailable;
-    protected int tripsCompleted;
+import com.groupProject.Services.fareCalculator;
 
+public abstract class TransportMedium implements fareCalculator {
+
+    private String name;
+    private String routeName;
+    private double baseFare;
+    private boolean isAvailable = true;
+
+    // Constructor 1 - name only
     public TransportMedium(String name) {
         this.name = name;
-        this.isAvailable = true;
-        this.tripsCompleted = 0;
     }
-    
+
+    // Constructor 2 - name and route (uses constructor chaining)
     public TransportMedium(String name, String routeName) {
         this(name);
         this.routeName = routeName;
     }
 
-    public void completeTrip() {
-        tripsCompleted++;
-        isAvailable = true;
-    }
-    
-    public void setAvailable(boolean available) {
-        isAvailable = available;
-    }
-    
-    public void setBaseFare(double baseFare) {
-        this.baseFare = baseFare;
-    }
-    
+    // Abstract method - subclasses must provide their own fare logic
+    public abstract double calculateFare(double distance);
+
+
     // Getters
     public String getName() { return name; }
     public String getRouteName() { return routeName; }
     public double getBaseFare() { return baseFare; }
-    public boolean isAvailable() { return isAvailable; }
-    public int getTripsCompleted() { return tripsCompleted; }
-    
+    public boolean isAvailable(){
+        return isAvailable;
+    }
+
+    // Setters
+    public void setAvailable(boolean available) { 
+        this.isAvailable = available; 
+    }
+    public void setRouteName(String routeName) { 
+        this.routeName = routeName; 
+    }
+    public void setBaseFare(double FARE) {
+        if (FARE >= 0) {
+            this.baseFare = FARE;
+        }
+    }
+
     public void displayInfo() {
-        System.out.printf("%s | %s | %s | Trips: %d%n",
-            name, 
-            routeName != null ? routeName : "No route",
-            isAvailable ? "AVAILABLE" : "BUSY",
-            tripsCompleted);
+        System.out.println("Name     : " + name);
+        System.out.println("Route    : " + (routeName != null ? routeName : "Not assigned"));
+        System.out.println("Fare     : P" + baseFare);
     }
 }
