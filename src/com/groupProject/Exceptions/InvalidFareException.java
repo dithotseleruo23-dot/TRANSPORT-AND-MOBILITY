@@ -7,5 +7,3 @@ public class InvalidFareException extends Exception {
     }
 }
  
-
-
