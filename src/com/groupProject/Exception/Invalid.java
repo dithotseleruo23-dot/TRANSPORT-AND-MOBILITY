@@ -1,4 +1,4 @@
-package com.groupProject.Exception;
+package com.groupProject.Exceptions;
 
 public class InvalidFareException extends Exception {
  
@@ -8,4 +8,4 @@ public class InvalidFareException extends Exception {
 }
  
 
-}
+
