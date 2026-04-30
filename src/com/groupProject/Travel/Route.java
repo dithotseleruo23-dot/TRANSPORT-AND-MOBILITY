@@ -28,7 +28,6 @@ public class Route {
         return stops.isEmpty();
     }
 
-    // Getters
     public String getRouteName() { return routeName; }
     public Location getStart() { return start; }
     public Location getDestination() { return destination; }
