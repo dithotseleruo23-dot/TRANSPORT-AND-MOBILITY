@@ -16,6 +16,6 @@ Phineas Mokalane: 72 additions, 0 deletions
 
 Elsie Maswere: 53 additions, 9 deletions
 
-Zandile Thamage: 63 additions, 16 deletions 
+Zandile Thamage: 73 additions, 16 deletions 
 
 Leruo Dithotse: 600 additions, 325 deletions 
