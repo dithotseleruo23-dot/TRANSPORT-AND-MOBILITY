@@ -1,5 +1,7 @@
 package com.groupProject.Transportation;
 
+import com.groupProject.Exceptions.InvalidFareException;
+
 public class Combi extends TransportMedium {
 
     // Standard combi fare in Gaborone
@@ -8,13 +10,21 @@ public class Combi extends TransportMedium {
     // Constructor 1 - name only
     public Combi(String name) {
         super(name);
-        setBaseFare(combiFare);
+        try {
+            setBaseFare(combiFare);
+        } catch (InvalidFareException e) {
+            System.out.println("Error setting combi fare: " + e.getMessage());
+        }
     }
 
     // Constructor 2 - name and route
     public Combi(String name, String routeName) {
         super(name, routeName);
-        setBaseFare(combiFare);
+        try {
+            setBaseFare(combiFare);
+        } catch (InvalidFareException e) {
+            System.out.println("Error setting combi fare: " + e.getMessage());
+        }
     }
 
     // Combi charges a flat fare no matter the distance
