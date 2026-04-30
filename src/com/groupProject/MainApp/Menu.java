@@ -100,7 +100,6 @@ public class Menu {
             return;
         }
 
-        // Polymorphic call - calculateFare runs differently for Combi vs Taxi
         double fare = selected.calculateFare(distance);
         System.out.println();
         System.out.println("Route    : " + start + " to " + end);
