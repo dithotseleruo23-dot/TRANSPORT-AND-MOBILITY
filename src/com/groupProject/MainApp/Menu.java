@@ -37,7 +37,7 @@ public class Menu {
 
             System.out.println("Choose an option: ");
             int choice = scanner.nextInt();
-            scanner.next();
+            scanner.nextLine();
 
             if (choice == 1) {
                 findRoute();
@@ -55,7 +55,7 @@ public class Menu {
             }
         }
 
-        scanner.close();
+        
     }
 
     
@@ -83,7 +83,7 @@ public class Menu {
 
         System.out.println("Your Vehicle type choice: ");
         int vehicleChoice = scanner.nextInt();
-        scanner.next();
+        scanner.nextLine();
 
         double distance = getDoubleInput("Enter estimated distance in km: ");
 
