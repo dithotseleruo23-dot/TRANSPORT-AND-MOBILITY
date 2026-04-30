@@ -10,9 +10,8 @@ public class Route {
     private Location destination;
     private TransportMedium vehicle;
     private ArrayList<Location> stops;
-    private double distance; // km - used for automatic fare calculation
+    private double distance; 
 
-    // Constructor now takes distance so each route knows how long it is
     public Route(Location start, String routeName, TransportMedium vehicle, Location destination, double distance) {
         this.start = start;
         this.routeName = routeName;
@@ -30,7 +29,6 @@ public class Route {
         return stops.isEmpty();
     }
 
-    // Getters
     public String getRouteName() { return routeName; }
     public Location getStart() { return start; }
     public Location getDestination() { return destination; }
