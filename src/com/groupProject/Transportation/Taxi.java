@@ -6,10 +6,9 @@ public class Taxi extends TransportMedium {
 
     private final double baseFare = 10.00;
     private final double specialFare = 40.00;
-    private final double distanceThreshold = 6.0; // km
+    private final double distanceThreshold = 6.0; 
     private boolean isSpecial;
 
-    // Constructor 1 - name only, defaults to short distance
     public Taxi(String name) {
         super(name);
         this.isSpecial = false;
@@ -20,7 +19,6 @@ public class Taxi extends TransportMedium {
         }
     }
 
-    // Constructor 2 - name, route and special flag
     public Taxi(String name, String routeName, boolean isSpecial) {
         super(name, routeName);
         this.isSpecial = isSpecial;
@@ -35,7 +33,6 @@ public class Taxi extends TransportMedium {
         }
     }
 
-    // Taxi fare depends on distance
     @Override
     public double calculateFare(double distance) {
         if (distance > distanceThreshold) {
