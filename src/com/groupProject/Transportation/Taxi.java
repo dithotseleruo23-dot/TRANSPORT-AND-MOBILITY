@@ -1,28 +1,37 @@
 package com.groupProject.Transportation;
 
+import com.groupProject.Exceptions.InvalidFareException;
+
 public class Taxi extends TransportMedium {
 
     private final double baseFare = 10.00;
     private final double specialFare = 40.00;
     private final double distanceThreshold = 6.0; // km
-
     private boolean isSpecial;
 
     // Constructor 1 - name only, defaults to short distance
     public Taxi(String name) {
         super(name);
         this.isSpecial = false;
-        setBaseFare(baseFare);
+        try {
+            setBaseFare(baseFare);
+        } catch (InvalidFareException e) {
+            System.out.println("Error setting taxi fare: " + e.getMessage());
+        }
     }
 
     // Constructor 2 - name, route and special flag
-    public Taxi(String name,String routeName, boolean isSpecial) {
+    public Taxi(String name, String routeName, boolean isSpecial) {
         super(name, routeName);
         this.isSpecial = isSpecial;
-        if (isSpecial) {
-            setBaseFare(specialFare);
-        } else {
-            setBaseFare(baseFare);
+        try {
+            if (isSpecial) {
+                setBaseFare(specialFare);
+            } else {
+                setBaseFare(baseFare);
+            }
+        } catch (InvalidFareException e) {
+            System.out.println("Error setting taxi fare: " + e.getMessage());
         }
     }
 
@@ -49,4 +58,3 @@ public class Taxi extends TransportMedium {
         System.out.println("Available: " + (isAvailable() ? "Yes" : "No"));
     }
 }
-
