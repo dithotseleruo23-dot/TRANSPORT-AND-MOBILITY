@@ -4,10 +4,8 @@ import com.groupProject.Exceptions.InvalidFareException;
 
 public class Combi extends TransportMedium {
 
-    // Standard combi fare in Gaborone
     private static final double combiFare = 9.00;
 
-    // Constructor 1 - name only
     public Combi(String name) {
         super(name);
         try {
@@ -17,7 +15,6 @@ public class Combi extends TransportMedium {
         }
     }
 
-    // Constructor 2 - name and route
     public Combi(String name, String routeName) {
         super(name, routeName);
         try {
@@ -27,8 +24,7 @@ public class Combi extends TransportMedium {
         }
     }
 
-    // Combi charges a flat fare no matter the distance
-    @Override
+   @Override
     public double calculateFare(double distance) {
         return getBaseFare();
     }
