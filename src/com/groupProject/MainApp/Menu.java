@@ -277,12 +277,12 @@ public class Menu {
 
         Route r1 = new Route(station, "Station - Main Mall", c1, mainMall, 3.5);
         Route r2 = new Route(mainMall, "Main Mall - Broadhurst", c2, broadhurst, 4.2);
-        Route r3 = new Route(phakalane, "Phakalane - Station", t1, station, 12.0);
+        Route r3 = new Route(phakalane,"Phakalane - Station", t1, station, 12.0);
         Route r4 = new Route(station, "Station - Mogoditshane", c3, mogoditshane, 15.0);
         Route r5 = new Route(mainMall, "Main Mall - Station", c4, station, 3.5);
         Route r6 = new Route(broadhurst, "Broadhurst - Main Mall", c5, mainMall, 4.2);
         Route r7 = new Route(station, "Station - Phakalane", t3, phakalane, 12.0);
-        Route r8 = new Route(mogoditshane, "Mogoditshane - Gaborone", c6, station, 15.0);
+        Route r8 = new Route(mogoditshane, "Mogoditshane - Station", c6, station, 15.0);
         system.addRoute(r1);
         system.addRoute(r2);
         system.addRoute(r3);

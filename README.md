@@ -29,7 +29,7 @@ We built this to make that easier. You type where you are and where you want to 
 Make sure Java is installed. Open a terminal in the project folder and run:
 
 ```
-javac -d out src/com/groupProject/Services/*.java src/com/groupProject/Transportation/*.java src/com/groupProject/Travel/*.java src/com/groupProject/MainApp/*.java
+javac -d out src/com/groupProject/Services/*.java src/com/groupProject/Transportation/*.java src/com/groupProject/Travel/*.java src/com/groupProject/MainApp/*.java src/com/groupProject/Exceptions/*.java
 ```
 
 Then start the program with:
@@ -69,6 +69,7 @@ When the app starts it already has some routes loaded so you can test things str
 | `com.groupProject.Transportation` | TransportMedium (abstract class), Combi, Taxi |
 | `com.groupProject.Services` | fareCalculator (interface), TransportSystem, RouteFinder, CombiFare, TaxiFare |
 | `com.groupProject.Travel` | Location, Route |
+| `com.groupProject.Exceptions` | InvalidFareException, InvalidLocationException, RouteNotFoundException |
 
 ---
 
@@ -81,6 +82,7 @@ When the app starts it already has some routes loaded so you can test things str
 - Polymorphism
 - Collections (ArrayList)
 - Constructor overloading and chaining
+- Exception Handling
 
 ---
 
