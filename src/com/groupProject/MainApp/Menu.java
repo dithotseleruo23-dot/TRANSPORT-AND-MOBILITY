@@ -246,14 +246,28 @@ public class Menu {
         Combi c1 = new Combi("Combi-01", "Station - Main Mall");
         Combi c2 = new Combi("Combi-02", "Main Mall - Broadhurst");
         Combi c3 = new Combi("Combi-03", "Gaborone - Mogoditshane");
+        Combi c4 = new Combi("Combi-04", "Main Mall - Station");
+        Combi c5 = new Combi("Combi-05", "Broadhurst - Main Mall");
+        Combi c6 = new Combi("Combi-06", "Mogoditshane - Gaborone");
         system.addTransport(c1);
         system.addTransport(c2);
         system.addTransport(c3);
+        system.addTransport(c4);
+        system.addTransport(c5);
+        system.addTransport(c6);
+
+
+
+    
 
         Taxi t1 = new Taxi("Taxi-01", "Phakalane - Station", true);
         Taxi t2 = new Taxi("Taxi-02", "Gaborone CBD - Main Mall", false);
+        Taxi t3 = new Taxi("Taxi-03", "Station - Phakalane", true);
+        Taxi t4 = new Taxi("Taxi-04", "Main Mall - Gaborone CBD", false);
         system.addTransport(t1);
         system.addTransport(t2);
+        system.addTransport(t3);
+        system.addTransport(t4);
 
         Location station = new Location("Station");
         Location mainMall = new Location("Main Mall");
@@ -264,11 +278,19 @@ public class Menu {
         Route r1 = new Route(station, "Station - Main Mall", c1, mainMall, 3.5);
         Route r2 = new Route(mainMall, "Main Mall - Broadhurst", c2, broadhurst, 4.2);
         Route r3 = new Route(phakalane, "Phakalane - Station", t1, station, 12.0);
-        Route r4 = new Route(station, "Gaborone - Mogoditshane", c3, mogoditshane, 15.0);
+        Route r4 = new Route(station, "Station - Mogoditshane", c3, mogoditshane, 15.0);
+        Route r5 = new Route(mainMall, "Main Mall - Station", c4, station, 3.5);
+        Route r6 = new Route(broadhurst, "Broadhurst - Main Mall", c5, mainMall, 4.2);
+        Route r7 = new Route(station, "Station - Phakalane", t3, phakalane, 12.0);
+        Route r8 = new Route(mogoditshane, "Mogoditshane - Gaborone", c6, station, 15.0);
         system.addRoute(r1);
         system.addRoute(r2);
         system.addRoute(r3);
         system.addRoute(r4);
+        system.addRoute(r5);
+        system.addRoute(r6);
+        system.addRoute(r7);
+        system.addRoute(r8);
     }
 
     static int getIntInput(String prompt) {
