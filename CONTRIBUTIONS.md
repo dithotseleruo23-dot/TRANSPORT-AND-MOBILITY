@@ -18,7 +18,7 @@ Leruo was the main coder throughout the project. He built the foundation the cla
 **Zandile Thamage — 202501399 — 24 commits**
 Zandile wrote the README and helped plan what the program was going to look like before we started coding. Implemented core OOP Concepts in most classes. She also helped catch and correct errors in the code as we went along.
 
-**Barati Moapare — 202505148 — 41 commits**
+**Barati Moapare — 202505148 — 42 commits**
 Barati helped plan the program structure and how everything was going to fit together.He helped in developing other classes that were incomplete. He drew the UML class diagram and helped with error checking throughout the project.
 
 **Elsie Maswere — 202503713 — 9 commits**
@@ -33,11 +33,11 @@ Phineas wrote the .gitignore, contribution log, created the TransportMedium supe
 
 | Member | Student ID | Commits | Lines Added | Lines Removed | Main Contributions |
 |--------|------------|---------|-------------|---------------|--------------------|
-| Barati Moapare | 202505148 | 41 | 507 | 198 | UML class diagram, program planning, error correction |
-| Leruo Dithotse | 202503473 | 30 | 822 | 401 | Lead coder, class structure, core logic, bug fixes, merging |
-| Zandile Thamage | 202501399 | 24 | 73 | 61 | README, program planning, error correction |
-| Elsie Maswere | 202503713 | 9 | 53 | 9 | OOP mapping document, error correction |
-| Phineas Mokalane | 202504984 | 11 | 92 | 2 | Contribution log,.gitignore,vehicle superclass, taxi class, Combi class, error correction |
+| Barati Moapare | 202505148 | 42 | 791 | 278 | UML class diagram, program planning, error correction |
+| Leruo Dithotse | 202503473 | 30 | 859 | 415 | Lead coder, class structure, core logic, bug fixes, merging |
+| Zandile Thamage | 202501399 | 24 | 97 | 78 | README, program planning, error correction |
+| Elsie Maswere | 202503713 | 9 | 67 | 57 | OOP mapping document, error correction |
+| Phineas Mokalane | 202504984 | 11 | 98 | 8 | Contribution log,.gitignore,vehicle superclass, taxi class, Combi class, error correction |
 
 ---
 
