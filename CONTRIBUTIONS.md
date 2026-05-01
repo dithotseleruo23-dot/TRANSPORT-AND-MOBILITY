@@ -1,21 +1,55 @@
-## Project Contribution Log - CSI 142 Transport System
+# Contributions Log
+**CSI142 Object Oriented Programming — Semester II 2025/26**
+Taxi/Combi Route Assistant System
 
-| Date | Member | Task Description | Commits | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| April 20 - 28 | Elsie Maswere | Main App Concept Idea, Coded and implemented RouteFinder.java, Location.java, updated READ. me, created the OOP mapping diagram | 8 | Completed |
-| April 27 - 29 | Barati Steward | Documentation and logic updates, handled exceptions in the codes, authored the UML Class Diagram | 8 | Completed |
-| April 05 - 29 | Phineas Mokalane | Vehicle Superclass, Combi/Taxi classes, and Contribution Log setup | 4 | Completed |
-| April 12 - 29 | Zandile Thamage | Project coordination, Authored READ.me, created src folder, and Task Checklist | 12 | Completed |
-| April 05 - 30 | Leruo Dithotse | Authored most codes and Created the Repository  | 15 | Pending |
+---
 
- ## Commit Summary (as of April 29)
+## How We Worked
 
-Barati Steward: 189 additions, 47 deletions
+We did not split the project into completely separate pieces. Most of the work happened together — one person would write something, the rest would look at it, point out what was wrong or missing, and we would fix it as a group. That said, each person had things they led on.
 
-Phineas Mokalane: 72 additions, 0 deletions
+---
 
-Elsie Maswere: 53 additions, 9 deletions
+## Individual Contributions
 
-Zandile Thamage: 73 additions, 16 deletions 
+**Leruo Dithotse — 202503473 — 25 commits**
+Leruo was the main coder throughout the project. He built the foundation — the class structure, the packages, the core logic — and kept adding to it as the project grew. When something was not working, he was the one who fixed it. He also handled merging branches on GitHub.
 
-Leruo Dithotse: 600 additions, 325 deletions 
+**Zandile Thamage — 202501399 — 17 commits**
+Zandile wrote the README and helped plan what the program was going to look like before we started coding. She also helped catch and correct errors in the code as we went along.
+
+**Barati Moapare — 202505148 — 32 commits**
+Barati helped plan the program structure and how everything was going to fit together. He drew the UML class diagram and helped with error checking throughout the project.
+
+**Elsie Maswere — 202503713 — 8 commits**
+Elsie worked on the OOP mapping document, going through each concept and explaining where it shows up in the project. She also helped with general corrections.
+
+**Phineas Mokalane — 202504984 — 8 commits**
+Phineas wrote the contribution log and added the Combi class to the project.
+
+---
+
+## Summary Table
+
+| Member | Student ID | Commits | Lines Added | Lines Removed | Main Contributions |
+|--------|------------|---------|-------------|---------------|--------------------|
+| Barati Moapare | 202505148 | 32 | 507 | 198 | UML class diagram, program planning, error correction |
+| Leruo Dithotse | 202503473 | 25 | 822 | 401 | Lead coder, class structure, core logic, bug fixes, merging |
+| Zandile Thamage | 202501399 | 17 | 73 | 61 | README, program planning, error correction |
+| Elsie Maswere | 202503713 | 8 | 53 | 9 | OOP mapping document, error correction |
+| Phineas Mokalane | 202504984 | 8 | 92 | 2 | Contribution log, Combi class |
+
+---
+
+## Commit Activity
+
+Total commits as of 1 May 2026: **90**
+
+| Week | Commits |
+|------|---------|
+| Week of 5 Apr 2026 | 2 |
+| Week of 12 Apr 2026 | 12 |
+| Week of 19 Apr 2026 | 4 |
+| Week of 26 Apr 2026 | 72 |
+
+Most of the commits came in the final week as the team pulled everything together, tested the program and added documentation. Early commits cover the initial setup, package structure and core classes.
