@@ -3,13 +3,12 @@ package com.groupProject.MainApp;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import com.groupProject.Services.TransportSystem;
+import com.groupProject.Services.*;
 import com.groupProject.Transportation.TransportMedium;
 import com.groupProject.Transportation.Combi;
 import com.groupProject.Transportation.Taxi;
 import com.groupProject.Travel.Location;
 import com.groupProject.Travel.Route;
-import com.groupProject.Exceptions.InvalidLocationException;
 import com.groupProject.Exceptions.*;
 
 public class Menu {
