@@ -6,14 +6,14 @@ Taxi/Combi Route Assistant System
 
 ## How We Worked
 
-We did not split the project into completely separate pieces. Most of the work happened together as one person would write something, the rest would look at it, point out what was wrong or missing, and we would fix it as a group and figure out a way to go about it . That said, each person had things they led on.
+We did not split the project into completely separate pieces. Most of the work happened together as one person would write something, the rest would view it,ask about it and point out what was wrong or missing, and we would fix it as a group and figure out a way to go about it . That said, each person had couple of things they led on.
 
 ---
 
 ## Individual Contributions
 
 **Leruo Dithotse — 202503473 — 25 commits**
-Leruo was the main coder throughout the project. He built the foundation the class structure, the packages, the core logic  and kept adding to it as the project grew. When something was not working, he was the one who fixed it. He also handled merging branches on GitHub.
+Leruo was the main coder throughout the project. He built the foundation the class structure, the packages, the core logic  and kept adding to it as the project grew. When something was not working especially with the codes , he was the one who fixed it. He also handled merging branches on GitHub.
 
 **Zandile Thamage — 202501399 — 17 commits**
 Zandile wrote the README and helped plan what the program was going to look like before we started coding. She also helped catch and correct errors in the code as we went along.
