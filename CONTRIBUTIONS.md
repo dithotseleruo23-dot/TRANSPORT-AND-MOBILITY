@@ -25,7 +25,7 @@ Barati helped plan the program structure and how everything was going to fit tog
 Elsie worked on the OOP mapping document, going through each concept and explaining where it shows up in the project. She also helped with general corrections.
 
 **Phineas Mokalane — 202504984 — 8 commits**
-Phineas wrote the .gitignore, contribution log and added the Combi class to the project as well as general corrections.
+Phineas wrote the .gitignore, contribution log , created the Vehicle superclass ,added the Combi class and taxi class to the project as well as general corrections.
 
 ---
 
@@ -37,7 +37,7 @@ Phineas wrote the .gitignore, contribution log and added the Combi class to the 
 | Leruo Dithotse | 202503473 | 25 | 822 | 401 | Lead coder, class structure, core logic, bug fixes, merging |
 | Zandile Thamage | 202501399 | 17 | 73 | 61 | README, program planning, error correction |
 | Elsie Maswere | 202503713 | 8 | 53 | 9 | OOP mapping document, error correction |
-| Phineas Mokalane | 202504984 | 8 | 92 | 2 | Contribution log,.gitignore, Combi class, error correction |
+| Phineas Mokalane | 202504984 | 8 | 92 | 2 | Contribution log,.gitignore,vehicle superclass ,taxi class, Combi class, error correction |
 
 ---
 
