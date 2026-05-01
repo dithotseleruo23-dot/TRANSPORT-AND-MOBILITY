@@ -1,6 +1,6 @@
 # Taxi/Combi Route Assistant System
 **CSI142 Object Oriented Programming — Semester II 2025/26**
-University of Botswana, Department of Computer Science
+University of Botswana, Department of Computer Science.
 
 ---
 
