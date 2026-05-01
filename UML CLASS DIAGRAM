@@ -1,0 +1,81 @@
+```
+                    <<interface>>
+                    fareCalculator
+             +---------------------------+
+             | + calculateFare(d):double |
+             +---------------------------+
+                          ^
+                          | implements
+                          |
+                   <<abstract>>
+                   TransportMedium
+          +-------------------------------------+
+          | - name: String                      |
+          | - routeName: String                 |
+          | - baseFare: double                  |
+          | - isAvailable: boolean              |
+          |-------------------------------------|
+          | + TransportMedium(name)             |
+          | + TransportMedium(name, routeName)  |
+          | + calculateFare(d): double <<abs>>  |
+          | + setBaseFare(fare) throws          |
+          |     InvalidFareException            |
+          | + displayInfo()                     |
+          | + getters / setters                 |
+          +-------------------------------------+
+                 ^               ^
+              extends         extends
+                 |               |
+               Combi            Taxi
+          +-----------+   +----------------------+
+          | FARE=9.00 |   | baseFare=10 <<final>> |
+          |           |   | specialFare=40        |
+          |-----------|   | threshold=6.0         |
+          |calculateF()|  | - isSpecial: boolean  |
+          |displayInfo()|  |----------------------|
+          +-----------+   |calculateFare()        |
+                          |displayInfo()          |
+                          +----------------------+
+
+          Location                   Route
+    +---------------+   +------------------------------------+
+    | - place:String|<>-| - routeName: String                |
+    |---------------|   | - start: Location                  |
+    | + getPlace()  |   | - destination: Location            |
+    | + setPlace()  |   | - vehicle: TransportMedium         |
+    +---------------+   | - stops: ArrayList<Location>       |
+                        | - distance: double                 |
+                        |------------------------------------|
+                        | + Route(start, routeName,          |
+                        |     vehicle, destination, distance)|
+                        | + addStop(Location)                |
+                        | + isDirectRoute(): boolean         |
+                        | + getters                          |
+                        | + displayInfo()                    |
+                        +------------------------------------+
+
+                        TransportSystem
+          +------------------------------------------------+
+          | - transports: ArrayList<TransportMedium>       |
+          | - routes: ArrayList<Route>                     |
+          |------------------------------------------------|
+          | + addTransport(TransportMedium)                |
+          | + addRoute(Route)                              |
+          | + getTransports(): ArrayList<TransportMedium>  |
+          | + getRoutes(): ArrayList<Route>                |
+          | + getAvailableTransports()                     |
+          | + findTransportByName(name): TransportMedium   |
+          | + findRoute(start, dest): Route                |
+          |     throws RouteNotFoundException              |
+          | + findConnectingRoutes(start, dest)            |
+          |     : ArrayList<ArrayList<Route>>              |
+          | + generateReport()                             |
+          +------------------------------------------------+
+
+   RouteNotFoundException  InvalidLocationException  InvalidFareException
+   +---------------------+ +------------------------+ +------------------+
+   | extends Exception   | |    extends Exception   | | extends Exception|
+   |---------------------| |------------------------| |------------------|
+   | + RouteNotFound(msg)| | + InvalidLocation(msg) | | + InvalidFare(msg|
+   +---------------------+ +------------------------+ +------------------+
+```
