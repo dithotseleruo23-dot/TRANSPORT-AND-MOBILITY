@@ -12,20 +12,20 @@ We did not split the project into completely separate pieces. Most of the work h
 
 ## Individual Contributions
 
-**Leruo Dithotse — 202503473 — 25 commits**
-Leruo was the main coder throughout the project. He built the foundation the class structure, the packages, the core logic  and kept adding to it as the project grew. When something was not working especially with the codes , he was the one who fixed it. He also handled merging branches on GitHub.
+**Leruo Dithotse — 202503473 — 28 commits**
+Leruo was the main coder throughout the project. He built the foundation the class structure, the packages, the core logic  and kept adding to it as the project grew. When something was not working especially with the codes, he fixed it if he could and asked everyone else to fix if he could not figure it out. He also handled merging branches on GitHub.
 
 **Zandile Thamage — 202501399 — 17 commits**
 Zandile wrote the README and helped plan what the program was going to look like before we started coding. She also helped catch and correct errors in the code as we went along.
 
-**Barati Moapare — 202505148 — 32 commits**
-Barati helped plan the program structure and how everything was going to fit together. He drew the UML class diagram and helped with error checking throughout the project.
+**Barati Moapare — 202505148 — 41 commits**
+Barati helped plan the program structure and how everything was going to fit together.He helped in developing other classes that were incomplete. He drew the UML class diagram and helped with error checking throughout the project.
 
-**Elsie Maswere — 202503713 — 8 commits**
+**Elsie Maswere — 202503713 — 9 commits**
 Elsie worked on the OOP mapping document, going through each concept and explaining where it shows up in the project. She also helped with general corrections.
 
-**Phineas Mokalane — 202504984 — 8 commits**
-Phineas wrote the .gitignore, contribution log, created the Vehicle superclass, added the Combi and taxi classes to the project as well as helped with general corrections.
+**Phineas Mokalane — 202504984 — 11 commits**
+Phineas wrote the .gitignore, contribution log, created the TransportMedium superclass, added the Combi and taxi classes to the project as well as helped with general corrections.
 
 ---
 
