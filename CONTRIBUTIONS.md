@@ -12,7 +12,7 @@ We did not split the project into completely separate pieces. Most of the work h
 
 ## Individual Contributions
 
-**Leruo Dithotse — 202503473 — 28 commits**
+**Leruo Dithotse — 202503473 — 30 commits**
 Leruo was the main coder throughout the project. He built the foundation the class structure, the packages, the core logic  and kept adding to it as the project grew. When something was not working especially with the codes, he fixed it if he could and asked everyone else to fix if he could not figure it out. He also handled merging branches on GitHub.
 
 **Zandile Thamage — 202501399 — 17 commits**
