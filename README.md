@@ -91,10 +91,12 @@ When the app starts it already has some routes loaded so you can test things str
 **Milestone 1**
 - Repository created
 - Concept note written
+- Group Members added
 
 **Milestone 2**
 - Package structure set up
 - Core classes added
+- Core OOP Concepts Implemented 
 - Menu loop working
 
 **Milestone 3**
