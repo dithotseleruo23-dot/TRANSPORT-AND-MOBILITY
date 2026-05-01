@@ -20,7 +20,7 @@ We ended up with 8 classes: Menu, TransportMedium, Combi, Taxi, TransportSystem,
 ## 2. Encapsulation
 **Where: TransportMedium.java, Location.java, Route.java**
 
-Every field is private. Nothing gets read or changed directly. You go through getters and setters. The clearest example is setBaseFare in TransportMedium. It does not just set the value. If you pass in something negative it throws an InvalidFareException right there, inside the class, before anything gets stored.
+Every field is private. Nothing gets read or changed directly. You go through getters and setters. The most visible example is setBaseFare in TransportMedium. It does not just set the value. If you pass in something negative it throws an InvalidFareException right  inside the class, before anything gets stored.
 
 ---
 
