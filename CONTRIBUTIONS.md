@@ -33,7 +33,7 @@ Phineas wrote the .gitignore, contribution log, created the Vehicle superclass, 
 
 | Member | Student ID | Commits | Lines Added | Lines Removed | Main Contributions |
 |--------|------------|---------|-------------|---------------|--------------------|
-| Barati Moapare | 202505148 | 39 | 507 | 198 | UML class diagram, program planning, error correction |
+| Barati Moapare | 202505148 | 40 | 507 | 198 | UML class diagram, program planning, error correction |
 | Leruo Dithotse | 202503473 | 28 | 822 | 401 | Lead coder, class structure, core logic, bug fixes, merging |
 | Zandile Thamage | 202501399 | 21 | 73 | 61 | README, program planning, error correction |
 | Elsie Maswere | 202503713 | 9 | 53 | 9 | OOP mapping document, error correction |
