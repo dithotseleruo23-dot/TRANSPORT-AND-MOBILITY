@@ -59,8 +59,38 @@ public class TransportSystem {
                 return r;
             }
         }
-        
-        throw new RouteNotFoundException("No route found from " + startPlace + " to " + destinationPlace + ".");
+        throw new RouteNotFoundException("No direct route found from " + startPlace + " to " + destinationPlace + ".");
+    }
+
+    
+    public ArrayList<ArrayList<Route>> findConnectingRoutes(String startPlace, String destinationPlace) {
+        ArrayList<ArrayList<Route>> connections = new ArrayList<ArrayList<Route>>();
+
+        for (int i = 0; i < routes.size(); i++) {
+            Route firstLeg = routes.get(i);
+
+            if (!firstLeg.getStart().getPlace().equalsIgnoreCase(startPlace)) {
+                continue;
+            }
+
+            String middlePlace = firstLeg.getDestination().getPlace();
+
+            for (int j = 0; j < routes.size(); j++) {
+                Route secondLeg = routes.get(j);
+
+                boolean secondLegStartsAtMiddle = secondLeg.getStart().getPlace().equalsIgnoreCase(middlePlace);
+                boolean secondLegEndsAtDestination = secondLeg.getDestination().getPlace().equalsIgnoreCase(destinationPlace);
+
+                if (secondLegStartsAtMiddle && secondLegEndsAtDestination) {
+                    ArrayList<Route> connection = new ArrayList<Route>();
+                    connection.add(firstLeg);
+                    connection.add(secondLeg);
+                    connections.add(connection);
+                }
+            }
+        }
+
+        return connections;
     }
 
     public void generateReport() {
@@ -76,7 +106,6 @@ public class TransportSystem {
         } else {
             for (int i = 0; i < transports.size(); i++) {
                 TransportMedium t = transports.get(i);
-                
                 System.out.println((i + 1) + ". " + t.getName()
                         + " | Route: " + t.getRouteName()
                         + " | Fare (5km): P" + t.calculateFare(5)

@@ -76,50 +76,128 @@ public class Menu {
                 throw new InvalidLocationException("Destination cannot be empty.");
             }
 
-            
-            Route route = system.findRoute(start, end);
+            try {
+                Route route = system.findRoute(start, end);
 
-            System.out.println();
-            System.out.println("Route found!");
-            System.out.println("Route    : " + route.getRouteName());
-            System.out.println("From     : " + route.getStart().getPlace());
-            System.out.println("To       : " + route.getDestination().getPlace());
-            System.out.println("Distance : " + route.getDistance() + " km");
+                System.out.println();
+                System.out.println("Direct route found!");
+                System.out.println("Route    : " + route.getRouteName());
+                System.out.println("From     : " + route.getStart().getPlace());
+                System.out.println("To       : " + route.getDestination().getPlace());
+                System.out.println("Distance : " + route.getDistance() + " km");
 
-            System.out.println();
-            System.out.println("Choose your transport:");
-            System.out.println("1. Combi (P9 flat fare)");
-            System.out.println("2. Taxi  (P10 short / P40 long distance)");
+                System.out.println();
+                System.out.println("Choose your transport:");
+                System.out.println("1. Combi (P9 flat fare)");
+                System.out.println("2. Taxi  (P10 short / P40 long distance)");
 
-            int vehicleChoice = getIntInput("Your vehicle type choice: ");
+                int vehicleChoice = getIntInput("Your vehicle type choice: ");
+                double distance = route.getDistance();
 
-            double distance = route.getDistance();
+                TransportMedium selected;
 
-            TransportMedium selected;
+                if (vehicleChoice == 1) {
+                    selected = new Combi("Combi", route.getRouteName());
+                } else if (vehicleChoice == 2) {
+                    boolean isSpecial = distance > 6.0;
+                    selected = new Taxi("Taxi", route.getRouteName(), isSpecial);
+                } else {
+                    System.out.println("Invalid transport choice.");
+                    return;
+                }
 
-            if (vehicleChoice == 1) {
-                selected = new Combi("Combi", route.getRouteName());
-            } else if (vehicleChoice == 2) {
-                boolean isSpecial = distance > 6.0;
-                selected = new Taxi("Taxi", route.getRouteName(), isSpecial);
-            } else {
-                System.out.println("Invalid transport choice.");
-                return;
-            }
+                double fare = selected.calculateFare(distance);
+                System.out.println();
+                System.out.println("Fare     : P" + fare);
 
-            double fare = selected.calculateFare(distance);
-            System.out.println();
-            System.out.println("Fare     : P" + fare);
+                if (distance > 6.0 && vehicleChoice == 2) {
+                    System.out.println("Note     : Long distance fare applied (over 6 km)");
+                }
 
-            if (distance > 6.0 && vehicleChoice == 2) {
-                System.out.println("Note     : Long distance fare applied (over 6 km)");
+            } catch (RouteNotFoundException e) {
+
+                System.out.println();
+                System.out.println("No direct route found. Looking for connecting routes...");
+                System.out.println();
+
+                ArrayList<ArrayList<Route>> connections = system.findConnectingRoutes(start, end);
+
+                if (connections.size() == 0) {
+                    System.out.println("Sorry, no routes found from " + start + " to " + end + ".");
+                    System.out.println("Try option 2 to see all available routes.");
+                    return;
+                }
+
+                System.out.println("Connecting routes available:");
+                System.out.println();
+                for (int i = 0; i < connections.size(); i++) {
+                    ArrayList<Route> legs = connections.get(i);
+                    Route leg1 = legs.get(0);
+                    Route leg2 = legs.get(1);
+                    System.out.println("Option " + (i + 1) + ":");
+                    System.out.println("  Leg 1: " + leg1.getStart().getPlace()
+                            + " -> " + leg1.getDestination().getPlace()
+                            + " (" + leg1.getVehicle().getName() + ", " + leg1.getDistance() + "km)");
+                    System.out.println("  Leg 2: " + leg2.getStart().getPlace()
+                            + " -> " + leg2.getDestination().getPlace()
+                            + " (" + leg2.getVehicle().getName() + ", " + leg2.getDistance() + "km)");
+                    System.out.println("  Connect at: " + leg1.getDestination().getPlace());
+                    System.out.println();
+                }
+
+                int optionChoice = getIntInput("Choose a connecting route (1-" + connections.size() + "): ");
+
+                if (optionChoice < 1 || optionChoice > connections.size()) {
+                    System.out.println("Invalid choice.");
+                    return;
+                }
+
+                ArrayList<Route> chosenLegs = connections.get(optionChoice - 1);
+
+                System.out.println();
+                System.out.println("Choose your transport:");
+                System.out.println("1. Combi (P9 flat fare)");
+                System.out.println("2. Taxi  (P10 short / P40 long distance)");
+
+                int vehicleChoice = getIntInput("Your vehicle type choice: ");
+
+                double totalFare = 0;
+                System.out.println();
+                System.out.println("-- Journey Breakdown --");
+
+                for (int i = 0; i < chosenLegs.size(); i++) {
+                    Route leg = chosenLegs.get(i);
+                    double distance = leg.getDistance();
+
+                    TransportMedium selected;
+
+                    if (vehicleChoice == 1) {
+                        selected = new Combi("Combi", leg.getRouteName());
+                    } else if (vehicleChoice == 2) {
+                        boolean isSpecial = distance > 6.0;
+                        selected = new Taxi("Taxi", leg.getRouteName(), isSpecial);
+                    } else {
+                        System.out.println("Invalid transport choice.");
+                        return;
+                    }
+
+                    double legFare = selected.calculateFare(distance);
+                    totalFare += legFare;
+
+                    System.out.println("Leg " + (i + 1) + ": "
+                            + leg.getStart().getPlace()
+                            + " -> " + leg.getDestination().getPlace()
+                            + " | Distance: " + distance + "km"
+                            + " | Fare: P" + legFare);
+                }
+
+                System.out.println();
+                System.out.println("Total Fare : P" + totalFare);
+                System.out.println("Connections: " + chosenLegs.size() + " leg(s)");
             }
 
         } catch (InvalidLocationException e) {
             System.out.println("Location error: " + e.getMessage());
-        } catch (RouteNotFoundException e) {
-            System.out.println("Sorry, " + e.getMessage());
-            System.out.println("Try option 2 to see all available routes.");
         }
     }
 
