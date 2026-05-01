@@ -41,14 +41,14 @@ The main method in Menu just runs the loop and calls other methods. findRoute(),
 ## 5. Composition
 **Where: Route.java**
 
-Route has a Location for the start, a Location for the destination, and a TransportMedium for the vehicle. It cannot exist without those three things. That is composition. Route is built out of other objects, not just primitive values.
+Route has a Location for the start of the journey, Location for the destination and a TransportMedium for the vehicle. It cannot exist without those three things. That is the composition. Route is built out of other objects, not just primitive values.
 
 ---
 
 ## 6. Inheritance
 **Where: Combi.java, Taxi.java**
 
-Combi and Taxi both extend TransportMedium. They pick up name, baseFare, isAvailable and the rest without having to redeclare any of it. The only thing they each write themselves is calculateFare. Combi always returns P9. Taxi checks the distance. Under 6km is P10, over 6km is P40.
+Combi and Taxi both extend TransportMedium. They pick up name, baseFare, isAvailable and the rest without having to redeclare any of it. The only thing they write themselves is calculateFare. Combi always returns P9. Taxi checks the distance. Under 6km is P10, over 6km is P40.
 
 ---
 
